@@ -1,6 +1,6 @@
 import { Notes } from "@/type";
 
-const URL = "http://localhost:3000/api/notes";
+const URL = `${process.env.NEXT_PUBLIC_API_URL}/notes`;
 
 const getNotes = async (): Promise<Notes[]> => {
   const data = await fetch(URL);
