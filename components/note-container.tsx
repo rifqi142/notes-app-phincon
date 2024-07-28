@@ -1,8 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { Notes } from "@/type";
-import getNotes from "@/actions/get-notes";
 import NoteList from "./note-list";
+import axios from "axios";
 
 interface NoteContainerProps {
   searchKeyword: string;
@@ -14,9 +14,14 @@ const NoteContainer: React.FC<NoteContainerProps> = ({ searchKeyword }) => {
 
   useEffect(() => {
     const fetchNotes = async () => {
-      const notesData = await getNotes();
-      setNotes(notesData);
-      setFilteredNotes(notesData);
+      try {
+        const response = await axios.get("api/notes");
+        console.log(response.data);
+        setNotes(response.data);
+        setFilteredNotes(response.data);
+      } catch (error) {
+        console.error("Error fetching notes", error);
+      }
     };
 
     fetchNotes();
