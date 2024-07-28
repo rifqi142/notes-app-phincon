@@ -1,6 +1,6 @@
 import { Notes } from "@/type";
 
-const URL = `${process.env.NEXT_PUBLIC_API_URL}/notes`;
+const URL = `${process.env.PUBLIC_API_URL}/notes`;
 
 const getNotes = async (): Promise<Notes[]> => {
   const data = await fetch(URL);
