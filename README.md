@@ -1,36 +1,110 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ⚡️ Notes  Application⚡️
 
-## Getting Started
+NotesList adalah aplikasi berbasis web untuk mencatat dan mengelola catatan. Proyek ini menggunakan Next.js sebagai framework frontend, Prisma untuk ORM, dan Neon DB (PostgreSQL) sebagai database. UI dibuat dengan shadcnui dan Tailwind CSS. Data diambil dan dikirim menggunakan Axios, dan React Hook Form digunakan untuk manajemen form.
 
-First, run the development server:
+
+### 📃 Fitur
+
+
+- CRUD Catatan: Buat, baca, perbarui, dan hapus catatan.
+- Mencari catatan berdasarkan title
+- UI Responsif: Desain antarmuka yang responsif dan ramah pengguna.
+
+
+
+
+
+
+## 🧑🏻‍💻 Author
+
+- [@Muhammad Rifqi Setiawan](https://github.com/rifqi142)
+
+
+## 📚 Tech Backend
+
+- Next.js: Framework React untuk pengembangan aplikasi web.
+- Prisma: ORM untuk bekerja dengan database PostgreSQL.
+- Neon DB (PostgreSQL): Database yang digunakan untuk menyimpan data.
+- shadcnui: Komponen UI.
+- Tailwind CSS: Framework CSS untuk styling.
+- Axios: Library untuk melakukan permintaan HTTP.
+- React Hook Form: Library untuk manajemen form di React.
+
+
+## ⚙️ Installation
+
+Clone Repository ini:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+  https://github.com/rifqi142/notes-app-phincon.git
+```
+Install Dependencies:
+```bash
+  cd repo
+  npm install
+```
+Setup environment variables:
+```bash
+  DATABASE_URL=your_neon_db_connection_string
+```
+Generate Prisma Client:
+```bash
+  npx prisma generate
+```
+Jalankan migration untuk membuat tabel di database:
+```bash
+  npx prisma migrate dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+##  💿 Menjalankan Project
+Untuk menjalankan proyek secara lokal, gunakan perintah berikut:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+  npm run dev
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```
+Aplikasi akan berjalan di http://localhost:3000.
+Silahkan buka link tersebut di browser anda atau dapat menggunakan CTRL + Click.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+##  📲API End Point
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### POST/api/notes
+#### Membuat Catatan Baru
+ ##### Request Body: 
+ - ncategory (string): Kategori catatan (wajib). 
+ - ntitle (string): Judul catatan (wajib).
+ - ndescription (string): Deskripsi catatan (wajib).
+ ##### Response
+- 201 Created: Catatan berhasil dibuat.
+- 400 Bad Request: Jika ada data yang hilang atau tidak valid.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### GET /api/notes
+#### Membuat Catatan Baru
+ ##### Response
+- 200 Created: Catatan berhasil dibuat.
 
-## Deploy on Vercel
+### DELETE /api/notes/[id]
+#### Membuat Catatan Baru
+ ##### Response
+- 200 OK: Catatan berhasil dihapus.
+- 400 Bad Request: Jika ada data yang hilang atau tidak valid.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### PATCH /api/notes/[id]
+#### Membuat Catatan Baru
+ ##### Request Body: 
+ - ncategory (string): Kategori catatan (wajib). 
+ - ntitle (string): Judul catatan (wajib).
+ - ndescription (string): Deskripsi catatan (wajib).
+ ##### Response
+- 200 OK: Catatan berhasil diperbarui.
+- 400 Bad Request: Jika ada data yang hilang atau tidak valid.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## 🕹 Contoh Penggunaan
+
+Berikut adalah contoh bagaimana aplikasi ini bekerja:
+- Buat Catatan Baru: Pengguna dapat membuat catatan baru dengan memasukkan kategori, judul, dan deskripsi.
+- Lihat Semua Catatan: Pengguna dapat melihat semua catatan yang telah dibuat dalam urutan waktu pembuatan.
+- Perbarui Catatan: Pengguna dapat memperbarui informasi catatan yang ada.
+- Hapus Catatan: Pengguna dapat menghapus catatan yang tidak diperlukan lagi.
