@@ -66,6 +66,7 @@ const Navbar = () => {
       setLoading(true);
       await axios.post("/api/notes", { ...data });
       toast.success("Notes created successfully");
+      window.location.reload();
       form.reset();
     } catch (error) {
       toast.error("Failed to create notes");
