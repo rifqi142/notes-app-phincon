@@ -12,15 +12,12 @@ NotesList adalah aplikasi berbasis web untuk mencatat dan mengelola catatan. Pro
 
 
 
-
-
-
 ## 🧑🏻‍💻 Author
 
 - [@Muhammad Rifqi Setiawan](https://github.com/rifqi142)
 
 
-## 📚 Tech Backend
+## 📚 Tech 
 
 - Next.js: Framework React untuk pengembangan aplikasi web.
 - Prisma: ORM untuk bekerja dengan database PostgreSQL.
@@ -29,6 +26,7 @@ NotesList adalah aplikasi berbasis web untuk mencatat dan mengelola catatan. Pro
 - Tailwind CSS: Framework CSS untuk styling.
 - Axios: Library untuk melakukan permintaan HTTP.
 - React Hook Form: Library untuk manajemen form di React.
+- React Hot Toast: Library untuk menampilkan notifikasi toast yang stylish dan mudah digunakan.
 
 
 ## ⚙️ Installation
